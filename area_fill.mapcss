@@ -1,0 +1,79 @@
+meta {
+  title: "Area of a highway";
+  description: "Highlights highway (multi)polygons tagged as area:highway, kerb, barrier, etc…";
+  author: "http://www.osm.org/user/Kato Kontenta; modyfied by Andygol";
+  watch-modified: true;
+}
+
+/* barriers */
+way[barrier=kerb] {
+ color: white; width: 3; dashes: 6;
+}
+way[barrier=fence] {
+color: yellow; width: 2; casing-width: 2; casing-color: yellow; casing-dashes: 2, 16;
+}
+way[barrier=guard_rail] {
+color: lightgrey; width: 4; casing-width: 2; casing-color: yellow;
+}
+way[barrier=hedge] {
+color: green; width: 3;
+}
+way[barrier=retaining_wall] {
+color: yellow; width: 2; casing-width: 3; casing-color: brown;
+}
+
+/* walls */
+way[barrier=wall] {
+ color: brown; width: 4;
+}
+area[building] {
+ color: brown; fill-color: brown; fill-opacity: 0.5; width: 1;
+}
+
+/* pedestrian */
+way[footway=crossing] {
+ color: white; opacity: 0.3; width: 20; dashes: 5;
+}
+area[area:highway=footway],
+area[area:highway=pedestrian] {
+  fill-color: #00ff00; fill-opacity: 0.3;
+}
+
+/* highway */
+area[area:highway=motorway] {
+  fill-color: #9999ff; fill-opacity: 0.3;
+}
+area[area:highway=trunk] {
+  fill-color: #99ff99; fill-opacity: 0.2;
+}
+area[area:highway=primary] {
+  fill-color: #fb805f; fill-opacity: 0.2;
+}
+area[area:highway=secondary] {
+ fill-color: orange; fill-opacity: 0.2;
+}
+area[area:highway=tertiary] {
+  fill-color: yellow; fill-opacity: 0.2;
+}
+area[area:highway=unclassified],
+area[area:highway=residential],
+area[area:highway=service] {
+  fill-color: white; fill-opacity: 0.2;
+}
+
+/* crossing */
+area[area:highway=crossing] {
+  fill-color: white; fill-opacity: 0.2;
+}
+area[area:highway=crossing][crossing=trunk] {
+  fill-color: #99ff99; fill-opacity: 0.2;
+}
+area[area:highway=crossing][crossing=primary] {
+  fill-color: #fb805f; fill-opacity: 0.2;
+}
+area[area:highway=crossing][crossing=secondary] {
+  fill-color: orange; fill-opacity: 0.2;
+}
+area[area:highway=crossing][crossing=tertiary] {
+  fill-color: yellow; fill-opacity: 0.2;
+}
